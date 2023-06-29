@@ -27,21 +27,24 @@
   <div class="container">
     <div class="merakiui-card max-w-sm p-4">
       <h2 class="text-2xl mb-4" id="mainContent">Please wait...</h2>
-      <p class="text-gray-600" id="mainContent">You are currently being redirected to the correct page</p>
+      <p class="text-gray-600" id="mainContent2">You are currently being redirected to the correct page</p>
       <p class="text-red-600" id="errorDisplay"></p>
     </div>
   </div>
   <script>
     function redirectToLink() {
       document.getElementById("mainContent").style.display = "unset";
+       document.getElementById("mainContent2").style.display = "unset";
     var url_string = window.location;
     var url = new URL(url_string);
     var id = url.searchParams.get("id");
       if(id == null) {
         document.getElementById("mainContent").style.display = "none";
+        document.getElementById("mainContent2").style.display = "none";
         document.getElementById("errorDisplay").innerText = "The specified Grabify ID does not exist or is invalid. Please try again later.";
       } else {
         document.getElementById("mainContent").style.display = "unset";
+        document.getElementById("mainContent2").style.display = "unset";
     window.location.href = "https://grabify.link/" + id;
       }
     }
