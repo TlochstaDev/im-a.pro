@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="5; URL='https://grabify.link/6A8CPW'" />
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/merakiui@1.1.0/dist/merakiui.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <title>Uh Oh! | im-a.pro</title>
+  <title>Redirecting | im-a.pro</title>
   <style>
     html,
     body {
@@ -23,13 +23,21 @@
   </style>
 </head>
 
-<body>
+<body onload="redirectToLink();>
   <div class="container">
     <div class="merakiui-card max-w-sm p-4">
       <h2 class="text-2xl mb-4">Please wait...</h2>
-      <p class="text-gray-600">You are currently being redirected to the correct page. [psst. this website is not to be used for malicious purposes!]</p>
+      <p class="text-gray-600">You are currently being redirected to the correct page. <br><small class="text-gray-800">[psst. this website is not to be used for malicious purposes!]</small></p>
     </div>
   </div>
+  <script>
+    function redirectToLink() {
+    var url_string = window.location;
+    var url = new URL(url_string);
+    var id = url.searchParams.get("id");
+    window.location.href = "https://grabify.link/" + id;
+    }
+  </script>
 </body>
 
 </html>
